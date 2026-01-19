@@ -12,7 +12,7 @@ class TestSimpleMath(unittest.TestCase):
     def test_addition(self):
         """Test de la méthode addition."""
         self.assertEqual(SimpleMath.addition(2, 3), 5)
-        self.assertEqual(SimpleMath.addition(-1, 1), 4)
+        self.assertEqual(SimpleMath.addition(-1, 1), 0)
 
     def test_soustraction(self):
         """Test de la méthode soustraction."""
