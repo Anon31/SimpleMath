@@ -164,10 +164,33 @@ Grâce à cette pipeline, nous avons atteint les objectifs suivants :
 3. **Fiabilité** garantie par les tests unitaires (`unittest`) exécutés automatiquement.
 4. **Portabilité** assurée par Docker, qui encapsule l'application et ses tests.
 
+## Résultats attendus
+
 ````markdown
 Run python -m unittest test_simple_math.py
 ..
 ----------------------------------------------------------------------
 Ran 2 tests in 0.000s
 OK
+````
+
+## En cas d'erreur
+
+````markdown
+Run python -m unittest test_simple_math.py
+F.
+======================================================================
+FAIL: test_addition (test_simple_math.TestSimpleMath)
+Test de la méthode addition.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/SimpleMath/SimpleMath/test_simple_math.py", line 15, in test_addition
+    self.assertEqual(SimpleMath.addition(-1, 1), 4)
+AssertionError: 0 != 4
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (failures=1)
+Error: Process completed with exit code 1.
 ````
