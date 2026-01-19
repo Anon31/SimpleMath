@@ -163,3 +163,11 @@ Grâce à cette pipeline, nous avons atteint les objectifs suivants :
 2. **Qualité assurée** par `pylint` (détection des erreurs de syntaxe).
 3. **Fiabilité** garantie par les tests unitaires (`unittest`) exécutés automatiquement.
 4. **Portabilité** assurée par Docker, qui encapsule l'application et ses tests.
+
+````markdown
+Run python -m unittest test_simple_math.py
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+OK
+````
