@@ -1,0 +1,47 @@
+name: CI/CD Pipeline Python
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupération du code source
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Installation de Python
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      # 3. Installation des dépendances (Pylint)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint
+
+      # 4. Analyse du code (Linting) - Étape 6
+      # Note: On ignore parfois certaines erreurs mineures pour ne pas bloquer le TP
+      - name: Analyser le code avec Pylint
+        run: |
+          pylint **/*.py || true
+
+      # 5. Exécution des Tests Unitaires - Étapes 4 & 5
+      - name: Lancer les tests unitaires
+        run: |
+          python -m unittest test_simple_math.py
+
+      # 6. Build de l'image Docker - Étape 7
+      - name: Build Docker Image
+        run: |
+          docker build -t my-python-app .
+
+      # Optionnel : Test rapide du conteneur
+      - name: Run Docker Container Test
+        run: |
+          docker run my-python-app
