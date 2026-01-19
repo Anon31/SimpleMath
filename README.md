@@ -3,11 +3,11 @@
 > Contexte : Ce TP vise à construire une chaîne d'intégration continue complète (CI/CD) utilisant GitHub Actions pour un projet Python, avec une validation de qualité (Linting) et une conteneurisation (Docker).
 >
 
-## 1. 🏁 Initialisation du Projet (Git & GitHub)
+## 🏁 Initialisation du Projet (Git & GitHub)
 
 **Objectif** : Configurer le dépôt et sécuriser les échanges.
 
-## 2. 🐍 Développement Python (Logique & Tests)
+## 🐍 Développement Python (Logique & Tests)
 
 **Objectif** : Implémenter la logique métier (`SimpleMath`) et les tests unitaires associés (`TestSimpleMath`).
 
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-## 3. ⚙️ Configuration du Pipeline (GitHub Actions)
+## ⚙️ Configuration du Pipeline (GitHub Actions)
 
 **Objectif** : Automatiser les tests, le linting et le build Docker à chaque `push`.
 
@@ -131,7 +131,7 @@ jobs:
           docker run simple-math
 ```
 
-## 4. 🐳 Conteneurisation (Docker)
+## 🐳 Conteneurisation (Docker)
 
 **Objectif** : Créer une image portable qui exécute automatiquement les tests au démarrage.
 
