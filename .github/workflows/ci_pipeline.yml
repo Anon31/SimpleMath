@@ -39,9 +39,9 @@ jobs:
       # 6. Build de l'image Docker - Étape 7
       - name: Build Docker Image
         run: |
-          docker build -t my-python-app .
+          docker build -t simple-math .
 
       # Optionnel : Test rapide du conteneur
       - name: Run Docker Container Test
         run: |
-          docker run my-python-app
+          docker run simple-math
